@@ -9,6 +9,7 @@
 #include "md.h"   /* Модуль - создания каталога */
 #include "rd.h"   /* Модуль - удаления каталога */
 #include "stfile.h" /* Модуль - вывода информации о модуле */
+#include "cutef.h"  /* Модуль - вырезания файла */
 
 using namespace std;
 
@@ -25,6 +26,7 @@ cout <<"if you want copy file type \"cp-f\"\n";
 cout <<"if you want rename file type \"rn-f\"\n";
 cout <<"if you want delete dir type \"del-d\"\n";
 cout <<"if you want create dir type \"cr-d\"\n";
+cout <<"if you want to cut the file \"cut-f\"\n";
 cout <<"if you want exit type \"exit\"\n";
 // бесконечный цикл
 while(1)
@@ -91,6 +93,16 @@ while(1)
         cout<<"Enter path name\n";
         cin>>path;
         statfile(path);
+        cout<<"Enter commаnd\n";
+    }
+    // вызов функции вырезания файла
+    if(strcmp(c,"cut-f")==0) 
+    {
+        cout<<"Enter path name\n";
+        cin>>path;
+        cout<<"enter new directory (for example: home/user/ or ..)\n";
+        cin>>nname;
+        cutefile(path, nname);
         cout<<"Enter commаnd\n";
     }
 }
